@@ -10,6 +10,7 @@ requires-python = ">=3.12"
 
 [tool.poetry.dependencies]
 matplotlib = "^3.10.1"
+pyqt6 = "^6.8.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"
@@ -119,6 +120,7 @@ ignore = [
     "G002",   # Logging statement uses `%`
     "G004",   # Logging statement uses f-string
 ]
+per-file-ignores = {"tests/*.py" = ["D103", "S101", "FBT001"]}
 
 [tool.ruff.lint.flake8-annotations]
 mypy-init-return = true

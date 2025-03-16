@@ -29,3 +29,50 @@ It's available over [here][stylesheet] at the [GYPT wiki][wiki].
 [gypt.org]: https://gypt.org
 [wiki]: https://wiki.gypt.org
 [stylesheet]: https://wiki.gypt.org/index.php/Python/stylesheet
+
+
+---
+
+### How to use:
+
+#### Applying GYPT-stylesheet
+Just import the library:
+```python
+import gypt_matplotlib as gypt  # importing automatically applies the style
+```
+
+#### Creating plots with ``a.u.`` (arbitrary units)
+Use a context manager:
+```python
+import matplotlib.pyplot as plt
+import gypt_matplotlib as gypt
+
+with gypt.au_plot():
+    plt.title("Demo of plot without numbers on X-/Y-Axis.")
+    plt.show()
+```
+
+#### Using other diverse context managers
+```python
+import matplotlib.pyplot as plt
+import gypt_matplotlib as gypt
+
+with gypt.auto_close():
+    # This context manager automatically calls ``plt.close()``.
+    # Saving and displaying have to be done manually!
+    ...
+
+with gypt.auto_show():
+    # This context manager automatically calls ``plt.show()`` and ``plt.close()``.
+    # It's incompatible with ``gypt.auto_save()``! Use ``gypt.auto_save_and_show()`` instead!
+    ...
+
+with gypt.auto_save("path/to/file.png"):
+    # This context manager automatically calls ``plt.savefig()`` and ``plt.close()``.
+    # It's incompatible with ``gypt.auto_show()``! Use ``gypt.auto_save_and_show()`` instead!
+    ...
+
+with gypt.auto_save_and_show("path/to/file.png"):
+    # This context manager automatically calls ``plt.savefig()``, ``plt.show()`` and ``plt.close()``.
+    ...
+```
