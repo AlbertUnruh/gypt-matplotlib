@@ -1,0 +1,21 @@
+name: Build and publish python package
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  publish-service-client-package:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Publish PyPi package
+        uses: code-specialist/pypi-poetry-publish@v1
+        with:
+          PACKAGE_DIRECTORY: "./gypt_matplotlib/"
+          POETRY_VERSION: "2.0.1"
+          BRANCH: "develop"
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PUBLISH_REGISTRY_PASSWORD }}
+          PUBLISH_REGISTRY: "https://test.pypi.org/simple/"
