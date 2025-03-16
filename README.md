@@ -36,13 +36,14 @@ It's available over [here][stylesheet] at the [GYPT wiki][wiki].
 ### How to use:
 
 #### Applying GYPT-stylesheet
-Just import the library:
+Just import the library. The stylesheet will be automatically applied.
 ```python
-import gypt_matplotlib as gypt  # importing automatically applies the style
+import gypt_matplotlib as gypt
 ```
 
 #### Creating plots with ``a.u.`` (arbitrary units)
-Use a context manager:
+You can use the context manager ``gypt.au_plot()``
+to create plots where the concept and not the actual numbers are important.
 ```python
 import matplotlib.pyplot as plt
 import gypt_matplotlib as gypt
@@ -50,6 +51,10 @@ import gypt_matplotlib as gypt
 with gypt.au_plot():
     plt.title("Demo of plot without numbers on X-/Y-Axis.")
     plt.show()
+
+# or even more advanced:
+with gypt.au_plot(), gypt.auto_save_and_show("path/to/file.png"):
+    plt.title("Demo of plot without numbers on X-/Y-Axis.")
 ```
 
 #### Using other diverse context managers
