@@ -15,6 +15,7 @@ jobs:
         with:
           PACKAGE_DIRECTORY: "./gypt_matplotlib/"
           POETRY_VERSION: "2.0.1"
+          POETRY_CORE_VERSION: "2.0.1"
           BRANCH: "develop"
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PUBLISH_REGISTRY_PASSWORD }}
