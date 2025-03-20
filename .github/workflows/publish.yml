@@ -33,6 +33,6 @@ jobs:
       run: |
         poetry config repositories.testpypi https://test.pypi.org/legacy/
         POETRY_PYPI_TOKEN_PYPI=$(curl -s -X POST \
-          "https://pypi.org/_/oidc/github/AlbertUnruh/gypt-matplotlib/" \
+          "https://test.pypi.org/_/oidc/github/AlbertUnruh/gypt-matplotlib/" \
           -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}")
         poetry publish --build -r testpypi
