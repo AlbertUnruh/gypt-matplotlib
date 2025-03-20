@@ -6,25 +6,55 @@ authors = [
     {name = "Keenan Noack", email = "AlbertUnruh@pm.me"}
 ]
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["Albert Unruh", "GYPT", "German Young Physicists' Tournament", "matplotlib", "addon"]
+classifiers = [
+    "Framework :: Matplotlib",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: German",  # it's a German tournament ...
+    "Natural Language :: English", # ... held in English
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+dynamic = ["dependencies", "optional-dependencies"]
 requires-python = ">=3.12"
+
+[project.urls]
+homepage = "https://github.com/AlbertUnruh/gypt-matplotlib"
+soucecode = "https://github.com/AlbertUnruh/gypt-matplotlib"
+issues = "https://github.com/AlbertUnruh/gypt-matplotlib/issues"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+requires-poetry = ">=2.0"
+include = ["gypt_matplotlib/gypt.mplstyle"]
 
 [tool.poetry.dependencies]
 matplotlib = "^3.10.1"
 pyqt6 = "^6.8.1"
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-pre-commit = "^4.1.0"
+black = ">=25.1.0"  # major and minor aren't semantically versioned but on year and month
+pre-commit = "^4.2.0"
 
 [tool.poetry.group.tests.dependencies]
 pytest = "^8.3.5"
 pytest-cov = "^6.0.0"
 pillow = "^11.1.0"
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
-
 
 [tool.black]
 line-length = 120
