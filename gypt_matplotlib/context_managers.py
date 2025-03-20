@@ -69,7 +69,7 @@ def auto_show():
     --------
     This is incompatible with `auto_save`! Use `auto_save_and_show` instead!
     """
-    with auto_close():
+    with auto_close():  # pragma: no cover  # plt.show() won't be tested
         yield
         plt.show()
 
@@ -91,7 +91,7 @@ def auto_save_and_show(fname: Path | str, **kwargs: ...):
     **kwargs
         Will be passed to `plt.savefig()`.
     """
-    with auto_close():
+    with auto_close():  # pragma: no cover  # plt.show() won't be tested
         yield
         plt.savefig(fname, **kwargs)
         plt.show()
