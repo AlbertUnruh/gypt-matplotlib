@@ -6,14 +6,29 @@ on:
       - 'v*.*.*'
 
 jobs:
-  publish:
+  pypi-publish:
+    name: upload release to PyPI
     runs-on: ubuntu-latest
+    # Specifying a GitHub environment is optional, but strongly encouraged
+    environment: pypi
     permissions:
-      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+      # IMPORTANT: this permission is mandatory for Trusted Publishing
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
-      - name: Build and publish to pypi
-        uses: JRubics/poetry-publish@v2.1
-        with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
-          repository_url: "https://test.pypi.org/legacy/"
+      # retrieve your distributions here
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+#jobs:
+#  publish:
+#    runs-on: ubuntu-latest
+#    permissions:
+#      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Build and publish to pypi
+#        uses: JRubics/poetry-publish@v2.1
+#        with:
+#          pypi_token: ${{ secrets.PYPI_TOKEN }}
+#          repository_url: "https://test.pypi.org/legacy/"
