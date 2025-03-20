@@ -1,5 +1,6 @@
 [![GitHub License](https://img.shields.io/github/license/AlbertUnruh/gypt-matplotlib)](https://github.com/AlbertUnruh/gypt-matplotlib/blob/develop/LICENSE)
 [![Python version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FAlbertUnruh%2Fgypt-matplotlib%2Frefs%2Fheads%2Fdevelop%2Fpyproject.toml&query=%24.project.requires-python&label=Python)](https://python.org)
+[![PyPI - Version](https://img.shields.io/pypi/v/gypt_matplotlib?label=PyPi)](https://pypi.org/project/gypt_matplotlib/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 </br>
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/AlbertUnruh/gypt-matplotlib/develop.svg)](https://results.pre-commit.ci/latest/github/AlbertUnruh/gypt-matplotlib/develop)
