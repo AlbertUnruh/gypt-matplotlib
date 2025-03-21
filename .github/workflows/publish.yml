@@ -54,9 +54,8 @@ jobs:
 
     - name: Build and publish package
       run: |
-        poetry config repositories.testpypi https://test.pypi.org/legacy/
-        poetry config pypi-token.testpypi ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
-        poetry publish --build -r testpypi
+        poetry config pypi-token.pypi ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
+        poetry publish --build
 
     - name: Update tag to point to the latest commit
       run: |
