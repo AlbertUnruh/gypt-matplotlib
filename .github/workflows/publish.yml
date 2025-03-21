@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
@@ -14,12 +14,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Ensure full history is fetched to switch branches
+
+    - name: Switch to develop branch
+      run: git checkout develop
 
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: 3.12
+
+    - name: Extract version from tag
+      id: extract_version
+      run: echo "NEW_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+    - name: Update version
+      run: python3 update_version.py ${{ env.NEW_VERSION }}
+
+    - name: Commit update
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m "Update version to ${{ env.NEW_VERSION }}"
+        git push origin develop
+
+    - name: Capture latest commit SHA
+      id: capture_sha
+      run: echo "LATEST_COMMIT=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
     - name: Install Poetry
       run: curl -sSL https://install.python-poetry.org | python3 -
@@ -29,5 +54,11 @@ jobs:
 
     - name: Build and publish package
       run: |
-        poetry config pypi-token.pypi ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
-        poetry publish --build
+        poetry config repositories.testpypi https://test.pypi.org/legacy/
+        poetry config pypi-token.testpypi ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
+        poetry publish --build -r testpypi
+
+    - name: Update tag to point to the latest commit
+      run: |
+        git tag -fa ${{ github.ref_name }} -m "Update tag to latest commit"
+        git push origin ${{ github.ref_name }} --force
