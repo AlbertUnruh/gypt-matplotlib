@@ -5,12 +5,9 @@ __authors__ = ["Keenan Noack <AlbertUnruh@pm.me>"]
 __repository__ = "https://github.com/AlbertUnruh/gypt-matplotlib/"
 
 
-# third party
-import matplotlib.pyplot as plt
-
 # local
-from .constants import PKG_PATH
 from .context_managers import au_plot, auto_close, auto_save, auto_save_and_show, auto_show
+from .utils import apply_gypt_style, axes_label, tex
 
 
 __all__ = (
@@ -19,8 +16,10 @@ __all__ = (
     "auto_save",
     "auto_save_and_show",
     "auto_show",
+    "axes_label",
+    "tex",
 )
 
 
 # automatically apply the GYPT style
-plt.style.use(PKG_PATH / "gypt.mplstyle")
+apply_gypt_style()
