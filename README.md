@@ -1,11 +1,12 @@
 [![GitHub License](https://img.shields.io/github/license/AlbertUnruh/gypt-matplotlib)](https://github.com/AlbertUnruh/gypt-matplotlib/blob/develop/LICENSE)
-[![Python version](https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2FAlbertUnruh%2Fgypt-matplotlib%2Frefs%2Fheads%2Fdevelop%2Fpyproject.toml&query=%24.project.requires-python&label=Python)](https://python.org)
-[![PyPI - Version](https://img.shields.io/pypi/v/gypt_matplotlib?label=PyPi)](https://pypi.org/project/gypt_matplotlib/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Python Version](https://img.shields.io/pypi/pyversions/gypt_matplotlib.svg?style=flat&label=Python&logo=Python)](https://python.org)
+[![PyPI Version](https://img.shields.io/pypi/v/gypt_matplotlib?label=PyPi)](https://pypi.org/project/gypt_matplotlib/)
+[![Downloads](https://static.pepy.tech/personalized-badge/gypt_matplotlib?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/gypt_matplotlib)
+[![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 </br>
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/AlbertUnruh/gypt-matplotlib/develop.svg)](https://results.pre-commit.ci/latest/github/AlbertUnruh/gypt-matplotlib/develop)
+[![pre-commit.ci Status](https://results.pre-commit.ci/badge/github/AlbertUnruh/gypt-matplotlib/develop.svg)](https://results.pre-commit.ci/latest/github/AlbertUnruh/gypt-matplotlib/develop)
 [![Code QL](https://img.shields.io/github/actions/workflow/status/AlbertUnruh/gypt-matplotlib/.github%2Fworkflows%2Fcodeql.yml?branch=develop&logo=github&label=CodeQL)](https://github.com/AlbertUnruh/gypt-matplotlib/actions/workflows/codeql.yml)
-[![pytest](https://img.shields.io/github/actions/workflow/status/AlbertUnruh/gypt-matplotlib/.github%2Fworkflows%2Fpytest.yml?branch=develop&logo=github&label=pytest)](https://github.com/AlbertUnruh/gypt-matplotlib/actions/workflows/pytest.yml)
+[![PyTest](https://img.shields.io/github/actions/workflow/status/AlbertUnruh/gypt-matplotlib/.github%2Fworkflows%2Fpytest.yml?branch=develop&logo=github&label=pytest)](https://github.com/AlbertUnruh/gypt-matplotlib/actions/workflows/pytest.yml)
 </br>
 [![GitHub Issues](https://img.shields.io/github/issues-raw/AlbertUnruh/gypt-matplotlib)](https://github.com/AlbertUnruh/gypt-matplotlib/issues)
 [![GitHub PRs](https://img.shields.io/github/issues-pr-raw/AlbertUnruh/gypt-matplotlib)](https://github.com/AlbertUnruh/gypt-matplotlib/pulls)
