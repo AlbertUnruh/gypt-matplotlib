@@ -1,4 +1,5 @@
 # standard library
+import secrets
 from pathlib import Path
 
 # third party
@@ -28,14 +29,25 @@ def _stylesheet_published() -> bool:
 
 @pytest.fixture
 def out_png_path(tmp_path: Path) -> Path:
-    """Generate temporary `out.png`-files."""
     return tmp_path / "out.png"
 
 
 @pytest.fixture
 def img_au_plot() -> Path:
-    """Return the path to a plot with arbitrary units."""
     name = "au_plot.png" if _stylesheet_published() else "_au_plot.png"
     path = IMG_DIR / name
     assert path.is_file(), f"`{name}` not present!"
     return path
+
+
+@pytest.fixture
+def img_label_plot() -> Path:
+    name = "label_plot.png" if _stylesheet_published() else "_label_plot.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
+def random_str() -> str:
+    return secrets.token_urlsafe()
