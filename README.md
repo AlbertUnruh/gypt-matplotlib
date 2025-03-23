@@ -12,7 +12,7 @@
 [![GitHub PRs](https://img.shields.io/github/issues-pr-raw/AlbertUnruh/gypt-matplotlib)](https://github.com/AlbertUnruh/gypt-matplotlib/pulls)
 
 
-# gypt-matplotlib
+# gypt_matplotlib
 A small addon for matplotlib that can be used for the GYPT.
 
 
@@ -22,6 +22,17 @@ A small addon for matplotlib that can be used for the GYPT.
 GYPT stands for **G**erman **Y**oung **P**hysicists’ **T**ournament.
 
 Further information can be found at [gypt.org][].
+
+
+### I'm a participant of the GYPT. Can I contribute?
+Of course, you can.
+Even if you are just a former participant, you are welcome.
+In fact, everyone is welcome to contribute or ask for features!
+
+Simply open an [issue][] and say what you would like to do so that details can be clarified directly.
+
+
+[issue]: https://github.com/AlbertUnruh/gypt-matplotlib/issues
 
 
 ### Where did you get the stylesheet?
