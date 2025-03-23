@@ -82,3 +82,27 @@ with gypt.auto_save_and_show("path/to/file.png"):
     # This context manager automatically calls ``plt.savefig()``, ``plt.show()`` and ``plt.close()``.
     ...
 ```
+
+#### Using ``utils``
+This library offers multiple utilities which can be used.
+The following utils are included:
+- [``axes_label``](#axes_label)
+- [``tex``](#tex)
+
+##### ``axes_label``
+```python
+import gypt_matplotlib as gypt
+
+# with a unit
+print(gypt.axes_label("v", unit=r"\frac{m}{s}"))  # $v$ in $\frac{m}{s}$
+
+# with arbitrary unit
+print(gypt.axes_label("I", is_au=True))  # $I$ in $\text{a.u.}$
+```
+
+##### ``tex``
+```python
+import gypt_matplotlib as gypt
+
+print(gypt.tex(r"e^{i\pi}+1=0"))  # $e^{i\pi}+1=0$
+```
