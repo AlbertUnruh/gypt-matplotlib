@@ -3,6 +3,7 @@ import secrets
 from pathlib import Path
 
 # third party
+import numpy as np
 import pytest
 
 # first party
@@ -49,5 +50,34 @@ def img_label_plot() -> Path:
 
 
 @pytest.fixture
+def img_plot() -> Path:
+    name = "plot.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
+def img_scatter() -> Path:
+    name = "scatter.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
+def img_errorbar() -> Path:
+    name = "errorbar.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
 def random_str() -> str:
     return secrets.token_urlsafe()
+
+
+@pytest.fixture
+def random_2d_array() -> np.ndarray:
+    return np.random.RandomState(1299147118).random((2, 100))
