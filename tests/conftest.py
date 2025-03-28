@@ -10,6 +10,9 @@ import pytest
 from gypt_matplotlib.constants import PKG_PATH
 
 
+SEED: int = 1299147118
+
+
 IMG_DIR: Path = Path(__file__).parent / "img/"
 assert IMG_DIR.exists(), "No image directory present!"
 assert IMG_DIR.is_dir(), "Image directory not a directory!"
@@ -74,10 +77,23 @@ def img_errorbar() -> Path:
 
 
 @pytest.fixture
+def img_hist2d() -> Path:
+    name = "hist2d.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
 def random_str() -> str:
     return secrets.token_urlsafe()
 
 
 @pytest.fixture
+def random_1d_array() -> np.ndarray:
+    return np.random.RandomState(SEED).random(100)
+
+
+@pytest.fixture
 def random_2d_array() -> np.ndarray:
-    return np.random.RandomState(1299147118).random((2, 100))
+    return np.random.RandomState(SEED).random((2, 100))

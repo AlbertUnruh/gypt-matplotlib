@@ -31,3 +31,10 @@ def test_errorbar(img_errorbar: Path, out_png_path: Path, random_2d_array: np.nd
     with context_managers.auto_save(out_png_path):
         plt.errorbar(*random_2d_array, *(0.1 * random_2d_array), fmt=". ")
     assert_identical_images(out_png_path, img_errorbar)
+
+
+def test_hist2d(img_hist2d: Path, out_png_path: Path, random_2d_array: np.ndarray):
+    assert not out_png_path.exists(), "`out.png` already exists!"
+    with context_managers.auto_save(out_png_path):
+        plt.hist2d(*random_2d_array)
+    assert_identical_images(out_png_path, img_hist2d)
