@@ -1,6 +1,6 @@
 [project]
 name = "gypt_matplotlib"
-version = "0.2.3"
+version = "0.4.0"
 description = "A small addon for matplotlib that can be used for the GYPT."
 authors = [
     {name = "Keenan Noack", email = "AlbertUnruh@pm.me"}

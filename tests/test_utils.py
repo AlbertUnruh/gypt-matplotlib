@@ -1,5 +1,4 @@
 # standard library
-import re
 from pathlib import Path
 
 # third party
@@ -7,7 +6,7 @@ import matplotlib.pyplot as plt
 import pytest
 
 # first party
-from gypt_matplotlib import constants, context_managers, utils
+from gypt_matplotlib import constants, context_managers, errors, utils
 
 # local
 from .utils import assert_identical_images
@@ -26,19 +25,19 @@ def test_axes_label(random_str: str):
 
 
 @pytest.mark.parametrize(
-    ("kwargs", "error"),
+    "kwargs",
     [
         # ↓ function defaults ↓
-        ({}, "have to be set"),
-        ({"unit": None}, "have to be set"),
-        ({"is_au": False}, "have to be set"),
-        ({"unit": None, "is_au": False}, "have to be set"),
+        {},
+        {"unit": None},
+        {"is_au": False},
+        {"unit": None, "is_au": False},
         # ↓ non function default ↓
-        ({"unit": "", "is_au": True}, "can't set"),
+        {"unit": "", "is_au": True},
     ],
 )
-def test_axes_label_fail(kwargs: dict[str, str | bool], error: str):
-    with pytest.raises(ValueError, match=re.compile(error, re.IGNORECASE)):
+def test_axes_label_fail(kwargs: dict[str, str | bool]):
+    with pytest.raises(errors.AxesLabelInvalidCallSignatureError):
         utils.axes_label("", **kwargs)
 
 

@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 
 # local
 from .constants import AU, STYLE_PATH
+from .errors import AxesLabelInvalidCallSignatureError
 
 
 __all__ = (
@@ -43,11 +44,14 @@ def axes_label(name: str, *, unit: str | None = None, is_au: bool = False) -> st
     -------
     str
         A formatted label containing the variable/parameter and unit for an axes.
+
+    Raises
+    ------
+    AxesLabelInvalidCallSignatureError
+        Is raised whenever an invalid call-signature is used (specifying both unit and is_au or neither).
     """
-    if unit is None and is_au is False:
-        raise ValueError("Either `unit` or `is_au` have to be set!")  # noqa: TRY003, EM101
-    if isinstance(unit, str) and is_au is True:
-        raise ValueError("Can't set `unit` and `is_au` at the same time!")  # noqa: TRY003, EM101
+    if (unit is None and is_au is False) or (isinstance(unit, str) and is_au is True):
+        raise AxesLabelInvalidCallSignatureError(unit=unit, is_au=is_au)
 
     if is_au:
         unit = AU
