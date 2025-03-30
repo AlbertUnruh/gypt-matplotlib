@@ -38,6 +38,9 @@ jobs:
           });
           core.setOutput('result', commit.data.commit.author.name);
 
+    - name: Debug Commit Author
+      run: echo "${{ steps.commit-details.outputs.result }}"
+
     - name: Exit if author is github-actions[bot]
       if: steps.commit-details.outputs.result == 'github-actions[bot]'
       run: echo "Commit author is github-actions[bot], exiting." && exit 0
