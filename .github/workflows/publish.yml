@@ -15,9 +15,30 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0  # Ensure full history is fetched to switch branches
+        ssh-key: ${{ secrets.SECRET_KEY }}
+
+    - name: Get commit SHA for the tag
+      id: get-sha
+      run: echo "::set-output name=sha::$(git rev-list -n 1 ${{ github.ref }})"
+
+    - name: Get commit details
+      id: commit-details
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const commit = await github.repos.getCommit({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: '${{ steps.get-sha.outputs.sha }}',
+          });
+          return commit.data.commit.author.name;
+
+    - name: Exit if author is github-actions[bot]
+      if: steps.commit-details.outputs.result == 'github-actions[bot]'
+      run: echo "Commit author is github-actions[bot], exiting." && exit 0
 
     - name: Switch to develop branch
       run: git checkout develop

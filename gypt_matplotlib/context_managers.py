@@ -47,6 +47,10 @@ def auto_save(fname: Path | str, **kwargs: ...):
     **kwargs
         Will be passed to `plt.savefig()`.
 
+    Notes
+    -----
+    This contextmanager automatically applies `plt.tight_layout()` to the plot.
+
     Warnings
     --------
     This is incompatible with `auto_show`! Use `auto_save_and_show` instead!
@@ -57,6 +61,7 @@ def auto_save(fname: Path | str, **kwargs: ...):
     """
     with auto_close():
         yield
+        plt.tight_layout()
         plt.savefig(fname, **kwargs)
 
 
@@ -65,12 +70,17 @@ def auto_show():
     """
     Contextmanager to automatically show and close plots.
 
+    Notes
+    -----
+    This contextmanager automatically applies `plt.tight_layout()` to the plot.
+
     Warnings
     --------
     This is incompatible with `auto_save`! Use `auto_save_and_show` instead!
     """
     with auto_close():  # pragma: no cover  # plt.show() won't be tested
         yield
+        plt.tight_layout()
         plt.show()
 
 
@@ -90,8 +100,13 @@ def auto_save_and_show(fname: Path | str, **kwargs: ...):
     ----------------
     **kwargs
         Will be passed to `plt.savefig()`.
+
+    Notes
+    -----
+    This contextmanager automatically applies `plt.tight_layout()` to the plot.
     """
     with auto_close():  # pragma: no cover  # plt.show() won't be tested
         yield
+        plt.tight_layout()
         plt.savefig(fname, **kwargs)
         plt.show()
