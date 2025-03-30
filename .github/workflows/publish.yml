@@ -24,9 +24,6 @@ jobs:
       id: get-sha
       run: echo "sha=$(git rev-list -n 1 ${{ github.ref }})" >> $GITHUB_OUTPUT
 
-    - name: Debug Commit SHA
-      run: echo "${{ steps.get-sha.outputs.sha }}"
-
     - name: Get commit details
       id: commit-details
       uses: actions/github-script@v6
@@ -39,13 +36,13 @@ jobs:
             repo: repo,
             ref: sha,
           });
-          core.setOutput('result', commit.data.commit.author.name);
+          core.setOutput('author', commit.data.commit.author.name);
 
     - name: Debug Commit Author
-      run: echo "${{ steps.commit-details.outputs.result }}"
+      run: echo "${{ steps.commit-details.outputs.author }}"
 
     - name: Exit if author is github-actions[bot]
-      if: steps.commit-details.outputs.result == 'github-actions[bot]'
+      if: steps.commit-details.outputs.author == 'github-actions[bot]'
       run: echo "Commit author is github-actions[bot], exiting." && exit 0
 
     - name: Switch to develop branch
