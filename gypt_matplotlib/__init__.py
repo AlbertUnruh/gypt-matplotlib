@@ -6,6 +6,7 @@ __repository__ = "https://github.com/AlbertUnruh/gypt-matplotlib/"
 
 
 # local
+from . import constants, context_managers, utils
 from .context_managers import au_plot, auto_close, auto_save, auto_save_and_show, auto_show
 from .utils import apply_gypt_style, axes_label, tex
 
@@ -17,7 +18,10 @@ __all__ = (
     "auto_save_and_show",
     "auto_show",
     "axes_label",
+    "constants",
+    "context_managers",
     "tex",
+    "utils",
 )
 
 
