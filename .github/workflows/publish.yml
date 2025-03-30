@@ -42,8 +42,11 @@ jobs:
       run: echo "${{ steps.commit-details.outputs.author }}"
 
     - name: Exit if author is github-actions[bot]
-      if: steps.commit-details.outputs.author == 'github-actions[bot]'
-      run: echo "Commit author is github-actions[bot], exiting." && exit 0
+      run: |
+        if [ "${{ steps.commit-details.outputs.author }}" == "github-actions[bot]" ]; then
+          echo "Commit author is github-actions[bot], exiting."
+          exit 0
+        fi
 
     - name: Switch to develop branch
       run: git checkout develop
