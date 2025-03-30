@@ -29,12 +29,14 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const commit = await github.repos.getCommit({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            ref: '${{ steps.get-sha.outputs.sha }}',
+          const { owner, repo } = context.repo;
+          const sha = '${{ steps.get-sha.outputs.sha }}';
+          const commit = await github.rest.repos.getCommit({
+            owner: owner,
+            repo: repo,
+            ref: sha,
           });
-          return commit.data.commit.author.name;
+          core.setOutput('result', commit.data.commit.author.name);
 
     - name: Exit if author is github-actions[bot]
       if: steps.commit-details.outputs.result == 'github-actions[bot]'
