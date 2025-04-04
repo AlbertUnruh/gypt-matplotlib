@@ -15,6 +15,13 @@
 # gypt_matplotlib
 A small addon for matplotlib that can be used for the GYPT.
 
+---
+
+> [!NOTE]
+> To install `gypt-matplotlib`, simply use `pip`.
+> ```cmd
+> pip install gypt_matplotlib
+> ```
 
 ---
 
