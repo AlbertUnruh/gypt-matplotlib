@@ -5,6 +5,7 @@
   ],
   "labels": ["dependencies", "{{depName}}"],
   "ignorePaths": ["requirements.txt"],
+  "rangeStrategy": "replace",
   "timezone": "Europe/Berlin",
   "schedule": [
     "* 0-5 * * 1"
