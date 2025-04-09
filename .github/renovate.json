@@ -2,7 +2,7 @@
   "extends": [
     "config:recommended",
     ":assignAndReview(AlbertUnruh)"
-  ]
+  ],
   "labels": ["dependencies", "{{depName}}"],
   "timezone": "Europe/Berlin",
   "schedule": [
