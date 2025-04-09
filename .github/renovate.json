@@ -5,6 +5,5 @@
   ],
   "labels": ["dependencies", "{{depName}}"],
   "ignorePaths": ["requirements.txt"],
-  "separateMinorPatch": true,
-  "rangeStrategy": "replace"
+  "separateMinorPatch": true
 }
