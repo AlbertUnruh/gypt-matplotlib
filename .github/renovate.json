@@ -4,6 +4,7 @@
     ":assignAndReview(AlbertUnruh)"
   ],
   "labels": ["dependencies", "{{depName}}"],
+  "ignorePaths": ["requirements.txt"],
   "timezone": "Europe/Berlin",
   "schedule": [
     "* 0-5 * * 1"
