@@ -44,7 +44,7 @@ requires-poetry = ">=2.0"
 include = ["gypt_matplotlib/gypt.mplstyle"]
 
 [tool.poetry.dependencies]
-matplotlib = "^3.10.1"
+matplotlib = "^3.10.3"
 pyqt6 = "^6.9.0"
 
 [tool.poetry.group.dev.dependencies]
