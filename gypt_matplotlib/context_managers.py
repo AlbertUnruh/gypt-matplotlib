@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 # local
 from .constants import AU_STYLE
 
-
 __all__ = (
     "au_plot",
     "auto_close",

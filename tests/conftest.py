@@ -8,7 +8,6 @@ import pytest
 # first party
 from gypt_matplotlib.constants import PKG_PATH
 
-
 IMG_DIR: Path = Path(__file__).parent / "img/"
 assert IMG_DIR.exists(), "No image directory present!"
 assert IMG_DIR.is_dir(), "Image directory not a directory!"
