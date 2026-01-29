@@ -1,3 +1,9 @@
+> [!IMPORTANT]
+> # THIS REPO MOVED OVER TO [CODEBERG](https://codeberg.org/AlbertUnruh/gypt-matplotlib)!
+> https://codeberg.org/AlbertUnruh/gypt-matplotlib
+
+<br><br>
+
 [![GitHub License](https://img.shields.io/github/license/AlbertUnruh/gypt-matplotlib?logo=data:image/svg%2bxml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPgo8c3ZnIGZpbGw9IiMwMDAwMDAiIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yMS45LDExLjU1M2wtMy02YS44NDYuODQ2LDAsMCwwLS4xNjQtLjIyNUEuOTg3Ljk4NywwLDAsMCwxOCw1SDEzVjNhMSwxLDAsMCwwLTIsMFY1SDZhLjk4Ny45ODcsMCwwLDAtLjczMS4zMjguODQ2Ljg0NiwwLDAsMC0uMTY0LjIyNWwtMyw2YS45ODIuOTgyLDAsMCwwLS4xLjQ0N0gyYTQsNCwwLDAsMCw4LDBIOS45OWEuOTgyLjk4MiwwLDAsMC0uMS0uNDQ3TDcuNjE4LDdIMTFWMjBINmExLDEsMCwwLDAsMCwySDE4YTEsMSwwLDAsMCwwLTJIMTNWN2gzLjM4MmwtMi4yNzcsNC41NTNhLjk4Mi45ODIsMCwwLDAtLjEuNDQ3SDE0YTQsNCwwLDAsMCw4LDBoLS4wMUEuOTgyLjk4MiwwLDAsMCwyMS45LDExLjU1M1pNNy44ODIsMTJINC4xMThMNiw4LjIzNlptOC4yMzYsMEwxOCw4LjIzNiwxOS44ODIsMTJaIi8+PC9zdmc+)](https://github.com/AlbertUnruh/gypt-matplotlib/blob/develop/LICENSE)
 [![Python Version](https://img.shields.io/pypi/pyversions/gypt_matplotlib.svg?style=flat&label=Python&logo=Python)](https://python.org)
 [![PyPI Version](https://img.shields.io/pypi/v/gypt_matplotlib?logo=pypi&label=PyPi)](https://pypi.org/project/gypt_matplotlib/)
