@@ -1,7 +1,6 @@
 # standard library
 from pathlib import Path
 
-
 __all__ = ("AU", "AU_STYLE", "PKG_PATH", "STYLE_PATH")
 
 

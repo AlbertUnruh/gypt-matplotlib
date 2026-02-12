@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 from .constants import AU, STYLE_PATH
 from .errors import AxesLabelInvalidCallSignatureError
 
-
 __all__ = (
     "apply_gypt_style",
     "axes_label",

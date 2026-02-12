@@ -4,7 +4,6 @@ from pathlib import Path
 # third party
 from PIL import Image, ImageChops
 
-
 __all__ = ("assert_identical_images",)
 
 
