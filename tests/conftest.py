@@ -3,10 +3,14 @@ import secrets
 from pathlib import Path
 
 # third party
+import numpy as np
 import pytest
 
 # first party
 from gypt_matplotlib.constants import PKG_PATH
+
+
+SEED: int = 1299147118
 
 
 IMG_DIR: Path = Path(__file__).parent / "img/"
@@ -49,5 +53,47 @@ def img_label_plot() -> Path:
 
 
 @pytest.fixture
+def img_plot() -> Path:
+    name = "plot.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
+def img_scatter() -> Path:
+    name = "scatter.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
+def img_errorbar() -> Path:
+    name = "errorbar.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
+def img_hist2d() -> Path:
+    name = "hist2d.png"
+    path = IMG_DIR / name
+    assert path.is_file(), f"`{name}` not present!"
+    return path
+
+
+@pytest.fixture
 def random_str() -> str:
     return secrets.token_urlsafe()
+
+
+@pytest.fixture
+def random_1d_array() -> np.ndarray:
+    return np.random.RandomState(SEED).random(100)
+
+
+@pytest.fixture
+def random_2d_array() -> np.ndarray:
+    return np.random.RandomState(SEED).random((2, 100))
